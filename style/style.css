@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input::-webkit-inner-spin-button,
+     input::-webkit-outer-spin-button {
+         -webkit-appearance: none;           
+        }
+
+    
+body{
+    background: linear-gradient(#ccc,#ffffff05),url(https://static7.depositphotos.com/1278966/761/i/600/depositphotos_7616729-stock-photo-numbers-background-light.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: 'Tilt Neon', cursive;
+    transition: 1s;
+    overflow: hidden;
+    animation: is-back 3s alternate-reverse infinite;
+}
+
+section h1{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    font-size: 3rem;
+    animation: is-rotate 3s alternate-reverse infinite;
+    rotate: 0;
+}
+
+#toggle-mode{
+    border-radius: 20px;
+    border: 1px #f2f2f2;
+    background: #f2f2f2;
+    padding: 10px;
+    position: absolute;
+    left: 80%;
+    top: 10%;
+}
+
+.mark-dark-mode{ 
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 30px;
+    width: 35px;
+    border-radius: 20px;
+    background: url(https://img.myloview.com.br/quadros/lua-simples-simbolo-do-tempo-icone-linear-com-contorno-fino-whit-400-131859031.jpg);
+    background-size: 100% 100%;
+    transition: .2s;
+    rotate:0deg;
+}
+
+
+div.mark-light-mode{
+    position: absolute;
+    top: 2px;
+    left: 35px;
+    height: 30px;
+    width: 42px;
+    border-radius: 20px;
+    background: url(https://st2.depositphotos.com/5934840/11952/v/450/depositphotos_119526760-stock-illustration-sun-pictogram-icon.jpg);
+    background-size: 100% 100%;
+    transition: .2s;
+    rotate:180deg;
+}
+
+
+
+p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+@keyframes is-back{
+    to{
+        background-size: 102% 102%;
+    }
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height:100vh;
+    scale: 1.1;
+    background: radial-gradient(#5c5c5c80, #ffffff00);
+    rotate: -.5deg;
+    transition: .6s;
+}
+
+
+.dark-mode{
+    position: relative;
+    width: 100%;
+    height:100vh;
+    scale: 1.1;
+    background:radial-gradient( rgba(200,200,200,.2),rgba(0, 0, 0,.8));
+    rotate: -.5deg;
+    color: #ddd;
+  text-shadow: 1px 1px 3px #222;
+    transition: .6s;
+}
+
+@keyframes is-rotate{
+    to{
+        rotate: .5deg;
+        scale: 1.05;
+    }
+}
+
+@keyframes is-color{
+    to{
+      scale: 1.09;
+      rotate: .5deg;
+      background: radial-gradient( #ffffff00,#68686880);
+    }
+}
+
+@keyframes is-move{
+   to{
+      position: relative;
+      left: 7px;
+      transition: 1s;
+      rotate: 1deg;
+   }
+}
+
+div.box-table{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 25%;
+    top:25%;
+    
+}
+
+table#multiplication-table{
+    position: absolute;
+    left:25%;
+    top: 65%;
+    font-size: 1.2rem;
+    transform: translate(-50%,-50%);
+}
+
+table#multiplication-table span{
+    color: rgba(167, 3, 3, 0.582);
+}
+
+div.dados input{
+    width: 200px;
+    height: 30px;
+    margin-right: -50px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-indent: 25px;
+    border-bottom: 3px solid rgb(107, 6, 6);
+    box-shadow: 1px 1px 5px #000;
+}
+
+div.dados button{
+    padding: 7px;
+    border-bottom-left-radius: 50%;
+    z-index: 4;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #222;
+    left: 0;
+    position: relative;
+    transition: .8s;
+}
+
+div.dados button:hover{
+    left: 6px;
+}
+
+div.dados button:active{
+     scale:.95;
+}
+
+tr{
+    left: 0;
+    position: relative;
+    animation: is-move 1.5s alternate-reverse infinite;
+    rotate: -1deg;
+    text-shadow: 0 0 7px #222;
+}
+

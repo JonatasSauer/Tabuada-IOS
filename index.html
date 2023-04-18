@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Tabuada</title>
+</head>
+
+<body>
+
+    
+
+    <section>
+        <div>
+           <button id="toggle-mode"> Dia  &nbsp; Noite <div class="mark-light-mode"></div></button>
+        </div>
+
+        <h1>Tabuada<hr style="width: 30px;  height: 5px; border-radius: 20px; box-shadow: 1px 1px 4px #222; background: rgb(124, 3, 3); border: red 1px solid;"><span><a style="color: #666; text-decoration: none; font-size: 1.3rem; position: relative; top: -40px; left: 40px;" href="https://github.com/JonatasSauer">GitHub</a></span></h1>
+        <div class="box-table">
+            <p>Digite um valor para gerar sua<hr style="width: 20px;  height: 4px; border-radius: 20px; box-shadow: 1px 1px 4px #222; background: rgb(124, 3, 3); border: red 1px solid;"><span style="font-size: 2rem; position: relative; top: -27px; left: 40px; color: rgb(167, 6, 6); ">tabuada</span></p>
+
+            <div class="dados">
+                <input type="number" id="number" placeholder="Digite um valor...">
+
+                <button id="btn-table" onclick="gerarTabuada()">Generate</button>
+            </div>
+        </div>
+
+        <table id="multiplication-table"></table>
+
+    </section>
+
+    <script>
+        function gerarTabuada() {
+
+            let number = parseInt(document.querySelector('#number').value);
+
+            let table = document.querySelector('#multiplication-table');
+
+            table.innerHTML = "";
+            
+         
+            for (let i = 0; i <= 10; i++) {
+                let result = number * i;
+                let line = "<tr><td>" + number + " X " + i + " = " + "<span> "+  result + "</span>" + "</td></tr>";
+ 
+                table.innerHTML += line;
+
+            }
+        
+        }
+
+
+        const tuggleBtn = document.querySelector('#toggle-mode');
+
+        tuggleBtn.addEventListener('click', ()=>{
+              document.querySelector('section').classList.toggle("dark-mode");
+             const mark =  document.querySelector('#toggle-mode div');
+            if(mark.classList.contains('mark-light-mode')){
+               mark.classList.remove('mark-light-mode');
+               mark.classList.add('mark-dark-mode');
+            }else if(mark.classList.contains('mark-dark-mode')){
+               mark.classList.remove('mark-light-mode');
+               mark.classList.remove('mark-dark-mode');
+               mark.classList.add('mark-light-mode');
+            }
+        }); 
+    </script>
+</body>
+
+</html>
